@@ -12,11 +12,11 @@ export const Link: ComponentStyleConfig = {
       fontWeight: props.theme.fontWeights["normal"],
       background: ``,
       backgroundSize: "16px 16px",
-      color: props.theme.colors.secondary,
+      color: "currentColor",
 
       _after: {
         content: '""',
-        background: props.theme.colors.secondary,
+        background: "currentColor",
         opacity: 0.2,
         position: "absolute",
         left: "12px",

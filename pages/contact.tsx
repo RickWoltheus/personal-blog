@@ -7,18 +7,17 @@ import {
   Icon,
   Link,
 } from "@chakra-ui/react";
-import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
-import { ArticleList } from "../../components/ArticleList";
-import { FeaturedWork } from "../../components/FeaturedWork/FeaturedWork";
-import { infra } from "../../infra";
+import { ArticleList } from "../components/ArticleList";
+import { infra } from "../infra";
+
 interface Props {
-  works: any[];
+  articles: any[];
 }
 
-const Index: NextPage<Props> = (props) => {
+const Contact: NextPage<Props> = (props) => {
   return (
     <>
       <Head>
@@ -27,8 +26,8 @@ const Index: NextPage<Props> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <chakra.main bgColor={"quinary"}>
-        <Box background={"primary"} paddingTop={8} paddingBottom={8}>
+      <chakra.main bgColor={"quinary.500"} paddingBottom={"100%"} flex={1}>
+        <Box background={"primary.500"} paddingTop={8} paddingBottom={8}>
           <Container maxW={"7xl"}>
             <Heading
               mb={6}
@@ -36,11 +35,11 @@ const Index: NextPage<Props> = (props) => {
               fontWeight="bold"
               lineHeight="none"
               letterSpacing={"wide"}
-              color={"quinary"}
+              color={"quinary.500"}
             >
-              Work
+              Contact
             </Heading>
-            <FeaturedWork works={props.works} />
+            <ArticleList articles={props.articles}></ArticleList>
           </Container>
         </Box>
       </chakra.main>
@@ -49,14 +48,14 @@ const Index: NextPage<Props> = (props) => {
 };
 
 export async function getStaticProps() {
-  const result = await infra.api.works.getEntries();
+  const result = await infra.api.posts.getEntries();
 
   return {
     props: {
-      works: result.items ?? null,
+      articles: result.items ?? null,
     },
     revalidate: 1,
   };
 }
 
-export default Index;
+export default Contact;

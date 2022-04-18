@@ -234,10 +234,37 @@ const greenTheme = {
   tertiary: "#01161e",
   quaternary: "#aec3b0",
   quinary: "#eff6e0",
+  background: "#ffffff",
+  text: "#01161e",
 };
+
+const blueOrange = {
+  primary: "#1d2d44",
+  secondary: "#3e5c76",
+  tertiary: "#0d1321",
+  quaternary: "#748cab",
+  quinary: "#f0ebd8",
+  background: "#ffffff",
+  text: "#01161e",
+};
+
+const darkBlue = {
+  primary: "#284b63",
+  secondary: "#d9d9d9",
+  tertiary: "#ffffff",
+  quaternary: "#3c6e71",
+  quinary: "#353535",
+  background: "#ffffff",
+  text: "#01161e",
+  textOnPrimary: "#353535",
+};
+
+const blue = {};
 
 export const colorThemes = {
   greenTheme,
+  blueOrange,
+  darkBlue,
 };
 
 export default colors;
